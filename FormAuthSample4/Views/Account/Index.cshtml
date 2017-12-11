@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+@model FormAuthSample4.ViewModel.AccountViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            Login
+        </legend>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model=>model.accountViewModel.UserName)</td>
+                    <td>@Html.TextBoxFor(model => model.accountViewModel.UserName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.accountViewModel.Password)</td>
+                    <td>@Html.PasswordFor(model => model.accountViewModel.Password)</td>
+                </tr>
+                <tr>
+                    <td> &nbsp;</td>
+                    <td>@Html.CheckBoxFor(model => model.rememberMe) @Html.LabelFor(model=>model.rememberMe)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Login"  /></td>
+                </tr>
+            </table>
+        }
+    </fieldset>
+</body>
+</html>

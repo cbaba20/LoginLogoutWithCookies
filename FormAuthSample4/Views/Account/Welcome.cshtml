@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Remember Me </title>
+</head>
+<body>
+    Welcome @Session["userName"]
+    <br/>
+    <a href="@Url.Action("Logout","Account")">Logout</a>
+</body>
+</html>
